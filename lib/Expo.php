@@ -148,7 +148,7 @@ class Expo
     private function prepareCurl()
     {
         // Create or reuse existing cURL handle
-        $this->ch = $this->ch?? curl_init();
+        $this->ch = isset($this->ch) ? $this->ch : curl_init();
 
         // Throw exception if the cURL handle failed
         if (!$this->ch) {
@@ -161,7 +161,7 @@ class Expo
         curl_setopt($ch, CURLOPT_URL, self::EXPO_API_URL);
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             'accept: application/json',
-            'content-type: application/json',
+            'content-type: application/json'
         ]);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

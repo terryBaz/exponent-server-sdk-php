@@ -11,7 +11,7 @@ class ExpoFileDriver implements ExpoRepository
      *
      * @var string
      */
-    private $storage = __DIR__.'/../../storage/tokens.json';
+    private $storage = __DIR__ . '/../../storage/tokens.json';
 
     /**
      * Stores an Expo token with a given identifier
@@ -21,7 +21,7 @@ class ExpoFileDriver implements ExpoRepository
      *
      * @return bool
      */
-    public function store($key, $value): bool
+    public function store($key, $value)
     {
         $storageInstance = null;
 
@@ -46,13 +46,13 @@ class ExpoFileDriver implements ExpoRepository
      *
      * @return string|null
      */
-    public function retrieve(string $key)
+    public function retrieve($key)
     {
         $token = null;
 
         $storageInstance = $this->getRepository();
 
-        $token = $storageInstance->{$key}?? null;
+        $token = isset($storageInstance->{$key}) ? $storageInstance->{$key} : null;
 
         return $token;
     }
@@ -64,7 +64,7 @@ class ExpoFileDriver implements ExpoRepository
      *
      * @return bool
      */
-    public function forget(string $key): bool
+    public function forget($key)
     {
         $storageInstance = null;
         try {

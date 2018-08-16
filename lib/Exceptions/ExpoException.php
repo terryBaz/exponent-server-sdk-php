@@ -16,7 +16,7 @@ class ExpoException extends \Exception
         $message = '';
         foreach ($response as $key => $item) {
             if ($item['status'] === 'error') {
-                $message .= $key == 0? "" : "\r\n";
+                $message .= $key == 0 ? "" : "\r\n";
                 $message .= $item['message'];
             }
         }

@@ -1,4 +1,5 @@
 <?php
+
 namespace ExponentPhpSDK;
 
 use ExponentPhpSDK\Exceptions\ExpoRegistrarException;
@@ -34,7 +35,7 @@ class ExpoRegistrar
      */
     public function registerInterest($interest, $token)
     {
-        if (! $this->isValidExpoPushToken($token)) {
+        if (!$this->isValidExpoPushToken($token)) {
             throw ExpoRegistrarException::invalidToken();
         }
 
@@ -74,7 +75,7 @@ class ExpoRegistrar
      *
      * @return array
      */
-    public function getInterests(array $interests): array
+    public function getInterests(array $interests)
     {
         $tokens = [];
 
@@ -100,8 +101,8 @@ class ExpoRegistrar
      *
      * @return bool
      */
-    private function isValidExpoPushToken(string $token)
+    private function isValidExpoPushToken($token)
     {
-        return  substr($token, 0, 18) ===  "ExponentPushToken[" && substr($token, -1) === ']';
+        return substr($token, 0, 18) === "ExponentPushToken[" && substr($token, -1) === ']';
     }
 }
