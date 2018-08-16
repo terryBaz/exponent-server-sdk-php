@@ -5,7 +5,7 @@ Server-side library for working with Expo push notifications using PHP
 [![License](https://poser.pugx.org/alymosul/exponent-server-sdk-php/license)](https://packagist.org/packages/alymosul/exponent-server-sdk-php)
 [![Total Downloads](https://poser.pugx.org/alymosul/exponent-server-sdk-php/downloads)](https://packagist.org/packages/alymosul/exponent-server-sdk-php)
 
-##This repo is a forked to support php5
+##This repo is forked to support php5
 
 # Usage
 - Require the package in your project
